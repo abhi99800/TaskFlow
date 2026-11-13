@@ -1,0 +1,6 @@
+{
+  "name": "TaskFlow - Task Tracking & Assignment",
+  "description": "Professional Task Tracking and Assignment Tool for managers to coordinate projects, deadlines, and team workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

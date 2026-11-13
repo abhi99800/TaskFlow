@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Theme Tokens */
+  --brand-color: #71347b;
+  --brand-hover: #5d2a65;
+  --brand-active: #4b2152;
+  --brand-light: #fbf7fc;
+  --brand-subtle: #f5eff7;
+  --brand-border: #dfcadf;
+  --brand-ring: rgba(113, 52, 123, 0.25);
+  --primary-icon-color: #71347b;
+
+  /* Status Colors */
+  --status-completed: #16a34a;
+  --status-pending: #d97706;
+  --status-in-progress: #2563eb;
+  --status-overdue: #dc2626;
+
+  /* Typography Scales */
+  --text-helper: 12px;
+  --text-secondary: 13px;
+  --text-body: 14px;
+  --text-subtitle: 16px;
+  --text-heading: 18px;
+  --text-title: 24px;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  #root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  *,
+  *::before,
+  *::after {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #171717;
+    background-color: #fbfbfa;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button, input, optgroup, select, textarea {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Scrollbar management utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom utility classes for brand tokens */
+.bg-brand {
+  background-color: var(--brand-color);
+}
+.bg-brand:hover {
+  background-color: var(--brand-hover);
+}
+.bg-brand:active {
+  background-color: var(--brand-active);
+}
+
+.text-brand {
+  color: var(--brand-color);
+}
+.text-brand:hover {
+  color: var(--brand-hover);
+}
+
+.border-brand {
+  border-color: var(--brand-color);
+}
+
+.ring-brand:focus {
+  outline-color: var(--brand-color);
+  box-shadow: 0 0 0 2px var(--brand-ring);
+}
+
+/* Right-side Slider (Drawer) Animations */
+@keyframes drawerSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes drawerFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.drawer-slide-in {
+  animation: drawerSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+.drawer-fade-in {
+  animation: drawerFadeIn 0.25s ease-out forwards;
+  will-change: opacity;
+}
+
+/* Toast Animations */
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast-slide-in {
+  animation: toastSlideIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+/* Toast Progress Countdown */
+@keyframes toastProgress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.toast-progress-bar {
+  animation-name: toastProgress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+
