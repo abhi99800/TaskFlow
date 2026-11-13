@@ -76,3 +76,5 @@ The application includes pre-configured demo accounts for testing both roles:
 - **Team Allocation:** Manage project memberships and user assignments.
 - **User & Role Management:** Activate/deactivate accounts, manage permission roles, and enforce task-dependency safety checks.
 - **Reporting & Metrics:** Completion rates, overdue deliverables, and team workload summaries.
+
+Development branch setup completed.
